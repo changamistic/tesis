@@ -15,4 +15,8 @@ public class MyUtil {
         return "http://localhost:8084/Tesis/";
     }
     
+    public static  String basepathlogin(){
+        return "/Tesis/faces/";
+    }
+    
 }

@@ -15,11 +15,11 @@
                 <p:panel header="Ingrese Usuario y Clave" footer="Sistema.">  
                         <h:panelGrid columns="2" cellpadding="5">  
                             <h:outputLabel for="username" value="Usuario" />  
-                            <p:inputText value="#{loginBean.username}"   
+                            <p:inputText value="#{loginBean.usuario.usuario}"   
                                     id="username" required="true" label="Usuario" />  
 
                             <h:outputLabel for="password" value="Clave:" />  
-                            <p:password value="#{loginBean.password}"   
+                            <p:password value="#{loginBean.usuario.clave}"   
                                     id="password" required="true" label="Clave" />  
                             
                             <f:facet name="footer" class="loginfooter" >  
@@ -35,11 +35,10 @@
     <script type="text/javascript">  
     function handleLoginRequest(xhr, status, args) {  
         if(args.validationFailed || !args.loggedIn) {  
-            jQuery('#dialog').effect("shake",{times:3},100);
+            jQuery('#formLogin').effect("shake",{times:3},100);
         }   
         else {  
-            dlg.hide();
-            jQuery('#loginLink').fadeOut();  
+            location.href=args.ruta;  
         }  
     }  
     </script>  
