@@ -1,0 +1,14 @@
+body{
+    background-color: #c2dfef
+}
+
+.container{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.loginfooter{
+    margin-right: 50%;
+}

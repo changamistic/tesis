@@ -7,5 +7,11 @@
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/tesis</property>
     <property name="hibernate.connection.username">tesis</property>
     <property name="hibernate.connection.password">Tesis2014</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="model/Usuario.hbm.xml"/>
+    <mapping resource="model/Rol.hbm.xml"/>
+    <mapping resource="model/Rolmenu.hbm.xml"/>
+    <mapping resource="model/Menu.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
