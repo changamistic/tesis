@@ -14,13 +14,13 @@
                 <p:growl id="growl" showDetail="true" life="3000" />     
                 <p:panel header="Ingrese Usuario y Clave" footer="Sistema.">  
                         <h:panelGrid columns="2" cellpadding="5">  
-                            <h:outputLabel for="username" value="Usuario" />  
+                            <h:outputLabel for="usuario" value="Usuario" />  
                             <p:inputText value="#{loginBean.usuario.usuario}"   
-                                    id="username" required="true" label="Usuario" />  
+                                    id="usuario" required="true" label="Usuario:" />  
 
-                            <h:outputLabel for="password" value="Clave:" />  
+                            <h:outputLabel for="clave" value="Clave:" />  
                             <p:password value="#{loginBean.usuario.clave}"   
-                                    id="password" required="true" label="Clave" />  
+                                    id="clave" required="true" label="Clave:" />  
                             
                             <f:facet name="footer" class="loginfooter" >  
                                 <p:commandButton id="loginButton" value="Login" update="growl"   

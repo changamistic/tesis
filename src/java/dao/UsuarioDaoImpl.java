@@ -5,7 +5,6 @@
 package dao;
 
 import model.Usuario;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
@@ -19,7 +18,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
     public Usuario findByUsuario(Usuario usuario) {
         Usuario model=null;
         Session sesion= HibernateUtil.getSessionFactory().getCurrentSession();
-        String sql="FROM Usuario WHERE usuario='"+usuario.getUsuario()+"'";
+        String sql="FROM usuario WHERE usuario="+usuario.getUsuario()+"";
         try{
             sesion.beginTransaction();
             model= (Usuario) sesion.createQuery(sql).uniqueResult();

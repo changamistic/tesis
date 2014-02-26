@@ -24,9 +24,7 @@ import util.MyUtil;
 @SessionScoped
 public class loginBean implements Serializable{
 
-    /**
-     * Creates a new instance of loginBean
-     */
+    
     private Usuario usuario;
     private UsuarioDao usuarioDao;
     public loginBean() {
@@ -47,15 +45,14 @@ public class loginBean implements Serializable{
     public void login(ActionEvent actionEvent) {  
         RequestContext context = RequestContext.getCurrentInstance();  
         FacesMessage msg;
-        
         boolean loggedIn;
         String ruta="";
         this.usuario=this.usuarioDao.login(this.usuario);
         if(this.usuario != null) {  
             loggedIn = true;  
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", this.usuario.getUsuario());
             msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenido", this.usuario.getUsuario());  
             ruta= MyUtil.basepathlogin()+"views/inicio.xhtml";
-            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", this.usuario.getUsuario());
         } else {  
             loggedIn = false;  
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales Invalidas");
