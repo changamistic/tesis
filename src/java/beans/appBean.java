@@ -21,6 +21,7 @@ public class appBean {
      */
     public appBean() {
     }
+    
     public String getBaseUrl()
     {
         return MyUtil.baseurl();

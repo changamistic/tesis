@@ -26,7 +26,8 @@ public class loginBean implements Serializable{
 
     
     private Usuario usuario;
-    private UsuarioDao usuarioDao;
+    private final UsuarioDao usuarioDao;
+    
     public loginBean() {
         this.usuarioDao = new UsuarioDaoImpl();
         if(this.usuario==null){
@@ -60,7 +61,7 @@ public class loginBean implements Serializable{
             this.usuario=new Usuario();
         }
         }  
-          
+        System.out.println(""+this.usuario.getUsuario());  
         FacesContext.getCurrentInstance().addMessage(null, msg);  
         context.addCallbackParam("loggedIn", loggedIn);
         context.addCallbackParam("ruta", ruta);
